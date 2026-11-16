@@ -1,0 +1,27 @@
+\begin{table}[h]
+\centering
+\caption{Resumo comparativo das métricas medidas por cenário.}
+\label{tab:resumo}
+\begin{tabular}{lllrrrrr}
+\toprule
+Cenario & Config & Modo & p50 (ms) & p95 (ms) & p99 (ms) & Vazao (msg/s) & Perda (\%) \\
+\midrule
+vazao & 100 B & core & 0.328 & 0.38 & 0.418 & 1000 & 0.0 \\
+vazao & 1 KB & core & 0.326 & 0.379 & 0.423 & 1000 & 0.0 \\
+vazao & 10 KB & core & 0.339 & 0.42 & 0.449 & 1000 & 0.0 \\
+vazao & 100 B & jetstream & 1.414 & 2.135 & 2.75 & 624 & 0.0 \\
+vazao & 1 KB & jetstream & 1.519 & 2.422 & 3.02 & 583 & 0.0 \\
+vazao & 10 KB & jetstream & 2.062 & 3.513 & 4.93 & 447 & 0.0 \\
+escalabilidade & 1 pubs & core & 0.321 & 0.363 & 0.41 & 500 & 0.0 \\
+escalabilidade & 10 pubs & core & 0.512 & 0.855 & 0.993 & 5000 & 0.0 \\
+escalabilidade & 50 pubs & core & 13.403 & 19.284 & 22.326 & 25000 & 0.0 \\
+escalabilidade & 1 pubs & jetstream & 1.672 & 2.757 & 3.624 & 500 & 0.0 \\
+escalabilidade & 10 pubs & jetstream & 4.368 & 6.639 & 9.008 & 1876 & 0.0 \\
+escalabilidade & 50 pubs & jetstream & 15.569 & 21.907 & 26.452 & 2263 & 5.4 \\
+resiliencia & 1 pub, sub cai 30s & core & 0.314 & 0.361 & 0.435 & 250 & 50.0 \\
+resiliencia & 1 pub, sub cai 30s & jetstream & 3.514 & 26900.353 & 29346.978 & 500 & 0.0 \\
+replicacao & R=1 & jetstream & 1.681 & 2.879 & 3.867 & 512 & 0.0 \\
+replicacao & R=3 & jetstream & 2.923 & 4.606 & 6.637 & 353 & 0.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
